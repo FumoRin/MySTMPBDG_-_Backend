@@ -9,7 +9,16 @@ const userService = {
     const newUser = new User(userData);
     return await newUser.save();
   },
-  // Add other user CRUD operations here
+  updateUser: async (userId, userData) => {
+    return await User.findByIdAndUpdate(userId, userData, {
+      new: true,
+      runValidators: true,
+    });
+  },
+
+  deleteUser: async (userId) => {
+    return await User.findByIdAndDelete(userId);
+  },
 };
 
 module.exports = userService;

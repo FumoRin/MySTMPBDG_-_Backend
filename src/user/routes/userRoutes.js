@@ -5,5 +5,6 @@ const authMiddleware = require("../../auth/middleware/auth");
 
 router.get("/", authMiddleware.verifyToken, userController.getAllUsers);
 router.post("/register", authMiddleware.verifyToken, userController.register);
+router.patch("/", authMiddleware.verifyToken);
 
 module.exports = router;

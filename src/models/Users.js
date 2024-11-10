@@ -16,6 +16,28 @@ const userSchema = new mongoose.Schema(
       address: String,
       photo_url: String,
     },
+    student_info: {
+      type: {
+        department: { type: String },
+        generation: {
+          type: Number,
+          required: true,
+          description: "Year of enrollment",
+        },
+        class: { type: String, required: true },
+      },
+      required: true,
+    },
+    teacher_info: {
+      type: {
+        department: { type: String, required: true },
+        subjects: {
+          type: [String],
+          required: true,
+        },
+      },
+      required: true,
+    },
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now },
   },
