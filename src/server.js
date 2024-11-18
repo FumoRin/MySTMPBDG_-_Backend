@@ -1,8 +1,8 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const cors = require("cors");
 const authRoutes = require("./auth/routes/authRoutes");
 const userRoutes = require("./user/routes/userRoutes");
+const announcementRoutes = require("./announcement/routes/announcementRoutes");
 const connectDB = require("./config/database");
 
 const app = express();
@@ -14,6 +14,7 @@ app.use(express.json());
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/announcements", announcementRoutes);
 
 // Database connection
 connectDB();
