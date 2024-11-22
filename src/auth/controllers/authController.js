@@ -24,6 +24,7 @@ const authController = {
         {
           userId: user._id,
           username: user.username,
+          email: user.email,
           role: user.role,
         },
         JWT_SECRET,
