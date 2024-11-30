@@ -33,7 +33,7 @@ const announcementController = {
         category,
         location,
         publish_date,
-        expiry_date,
+        announcement_date,
         attachments,
       } = req.body;
 
@@ -53,7 +53,7 @@ const announcementController = {
         category: category || "general",
         location: location || "",
         publish_date: publish_date || new Date(),
-        expiry_date: expiry_date,
+        announcement_date: announcement_date,
         attachments: attachments || [],
       };
 

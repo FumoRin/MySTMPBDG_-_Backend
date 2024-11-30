@@ -27,7 +27,7 @@ const announcementSchema = new mongoose.Schema(
     },
     location: { type: String },
     publish_date: { type: Date },
-    expiry_date: { type: Date },
+    announcement_date: { type: Date },
     attachments: [attachmentSchema],
   },
   { timestamps: true }

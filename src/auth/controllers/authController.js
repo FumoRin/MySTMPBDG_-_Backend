@@ -35,6 +35,7 @@ const authController = {
         message: "Login successful",
         token,
         user: {
+          _id: user._id,
           username: user.username,
           role: user.role,
           profile: user.profile,

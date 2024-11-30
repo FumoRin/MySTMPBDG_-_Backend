@@ -19,6 +19,7 @@ const authService = {
       message: "Login successful",
       token,
       user: {
+        _id: user._id,
         username: user.username,
         role: user.role,
         profile: user.profile,
@@ -34,6 +35,7 @@ const authService = {
     return {
       exists: true,
       user: {
+        _id: user._id,
         username: user.username,
         role: user.role,
         hasPassword: !!user.password,
