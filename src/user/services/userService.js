@@ -5,10 +5,15 @@ const userService = {
     return User.find({}, "-password");
   },
 
+  findUserById: async (userId) => {
+    return User.findById(userId);
+  },
+
   createUser: async (userData) => {
     const newUser = new User(userData);
     return await newUser.save();
   },
+
   updateUser: async (userId, userData) => {
     return await User.findByIdAndUpdate(userId, userData, {
       new: true,

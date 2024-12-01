@@ -21,22 +21,23 @@ const userSchema = new mongoose.Schema(
         department: { type: String },
         generation: {
           type: Number,
-          required: true,
-          description: "Year of enrollment",
         },
-        class: { type: String, required: true },
+        class: { type: String },
       },
-      required: true,
+      required: function () {
+        return this.role === "student";
+      },
     },
     teacher_info: {
       type: {
-        department: { type: String, required: true },
+        department: { type: String },
         subjects: {
           type: [String],
-          required: true,
         },
       },
-      required: true,
+      required: function () {
+        return this.role === "teacher";
+      },
     },
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now },
